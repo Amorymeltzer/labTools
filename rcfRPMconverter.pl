@@ -40,12 +40,14 @@ else {
   $c = <>;
 }
 
+my $const = 1.118/100000;
+
 if ($opts{r}) {
-  my $g = 1.118/100000*$c*$opts{r}*$opts{r};
+  my $g = $const * $c * $opts{r} * $opts{r};
   print "\n$g\n";
 }
 elsif ($opts{g}) {
-  my $r = sqrt($opts{g}/1.118*100000/$c);
+  my $r = sqrt($opts{g} / $const / $c);
   print "\n$r\n";
 }
 
