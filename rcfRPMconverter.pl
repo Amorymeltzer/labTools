@@ -64,14 +64,10 @@ elsif ($opts{g}) {
 sub usage
   {
     print <<USAGE;
-Usage: $0 [-abfht -d <month[1-12]/day[1-31]>]
-      -a Display all times (equivalent to -bf)
-      -b Display all past times
-      -f Display all upcoming times
-      -h Display home times
-      -t Display tomorrow\'s times
-      -d Specify a date of the form MM/DD
-      -c Turn off color printing
-      -H print this message
+Usage: $0 [-rgch]
+      -r specify a speed in rpm, cannot be used with -g option
+      -g specify rcf (g), cannot be used with -f option
+      -c specify the rotor radius, in centimeters (cm)
+      -h print this message
 USAGE
   }
