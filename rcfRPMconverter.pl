@@ -44,11 +44,11 @@ my $const = 1.118/100000;
 
 if ($opts{r}) {
   my $g =  $const * $c * $opts{r} * $opts{r};
-  printf "\n%.f\n", $g;
+  printf "%.f\n", $g;
 }
 elsif ($opts{g}) {
   my $r = sqrt($opts{g} / $const / $c);
-  printf "\n%.f\n", $r;
+  printf "%.f\n", $r;
 }
 
 
