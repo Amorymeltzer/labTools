@@ -32,11 +32,6 @@ if (!$opts{r} && !$opts{g}) {
   exit;
 }
 
-# Clean inputs
-foreach my $key (keys %opts) {
-  checkIfNumber($opts{$key});
-}
-
 if ($opts{s}) {
   $opts{c} = 20;		# Sorvall Legend
 } elsif ($opts{m}) {
@@ -44,6 +39,11 @@ if ($opts{s}) {
 } elsif (! $opts{c}) {
   print "What is the radius of your centrifuge (cm)?\n";
   $opts{c} = <>;;
+}
+
+# Clean inputs
+foreach my $key (keys %opts) {
+  checkIfNumber($opts{$key});
 }
 
 my $const = 1.118/100000;
