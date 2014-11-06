@@ -26,6 +26,10 @@ if ($opts{h}) {
   usage(); exit;
 }
 
+if (!$opts{r} && !$opts{g}) {
+  print "You must specify either rpm (r) or rcf/g (g)\n";
+  exit;
+}
 if ($opts{r} && $opts{g}) {
   print "You may only specificy either rpm (r) or rcf/g (g)\n";
   exit;
@@ -34,8 +38,7 @@ if ($opts{r} && $opts{g}) {
 my $c;
 if ($opts{c}) {
   $c = $opts{c};
-}
-else {
+} else {
   print "What is the radius of your centrifuge (cm)?\n";
   $c = <>;
 }
@@ -45,8 +48,7 @@ my $const = 1.118/100000;
 if ($opts{r}) {
   my $g =  $const * $c * $opts{r} * $opts{r};
   printf "%.f\n", $g;
-}
-elsif ($opts{g}) {
+} elsif ($opts{g}) {
   my $r = sqrt($opts{g} / $const / $c);
   printf "%.f\n", $r;
 }
