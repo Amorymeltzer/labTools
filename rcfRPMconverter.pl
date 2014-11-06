@@ -20,7 +20,7 @@ use Getopt::Std;
 
 # Parse commandline options
 my %opts = ();
-getopts('r:g:c:h', \%opts);
+getopts('r:g:c:smh', \%opts);
 
 if ($opts{h}) {
   usage(); exit;
@@ -31,6 +31,9 @@ if (!$opts{r} && !$opts{g}) {
   exit;
 } elsif ($opts{r} && $opts{g}) {
   print "You may only specificy either rpm (r) or rcf/g (g)\n";
+  exit;
+} elsif ($opts{s} && $opts{m}) {
+  print "You may only specificy one centrifuge\n";
   exit;
 }
 
@@ -43,12 +46,16 @@ sub checkIfNumber
   {
     my $check = shift;
     if ($check !~ /^\.\d+$|^\d+\.?\d*$/) {
-      print "Input must be a number\n";
+      print "Input must be a positive number\n";
       exit;
     }
   }
 
-if (! $opts{c}) {
+if ($opts{s}) {
+  $opts{c} = 20;
+} elsif ($opts{m}) {
+  $opts{c} = 8.7;
+} elsif (! $opts{c}) {
   print "What is the radius of your centrifuge (cm)?\n";
   $opts{c} = <>;;
 }
