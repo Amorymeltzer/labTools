@@ -34,6 +34,20 @@ if (!$opts{r} && !$opts{g}) {
   exit;
 }
 
+# Clean inputs
+foreach my $key (keys %opts) {
+  checkIfNumber($opts{$key});
+}
+
+sub checkIfNumber
+  {
+    my $check = shift;
+    if ($check !~ /\.\d+|\d+.?\d?/) {
+      print "Input must be a number\n";
+      exit;
+    }
+  }
+
 if (! $opts{c}) {
   print "What is the radius of your centrifuge (cm)?\n";
   $opts{c} = <>;;
