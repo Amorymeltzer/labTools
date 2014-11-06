@@ -33,9 +33,9 @@ if (!$opts{r} && !$opts{g}) {
 }
 
 if ($opts{s}) {
-  $opts{c} = 20;		# Sorvall Legend
+  $opts{c} = 20;		# Sorvall Legend XTR
 } elsif ($opts{m}) {
-  $opts{c} = 8.6;		# Benchtop minifuge
+  $opts{c} = 8.6;		# Sorvall Legend Micro 21
 } elsif (! $opts{c}) {
   print "What is the radius of your centrifuge (cm)?\n";
   $opts{c} = <>;;
@@ -79,8 +79,8 @@ Usage: $0 [-rgcsmh]
       -r specify a speed in rpm, cannot be used with -g option
       -g specify rcf (g), cannot be used with -f option
       -c specify the rotor radius, in centimeters (cm)
-      -s default to the Sorvall Legend centrifuge.  Supersedes -c and -m
-      -m default to the benchtop minifuge.  Supersedes -c
+      -s default to the Sorvall Legend XTR centrifuge.  Supersedes -c and -m
+      -m default to the Sorvall Legend Micro 21 microfuge.  Supersedes -c
       -h print this message
 USAGE
   }
