@@ -1,22 +1,17 @@
 #!/usr/bin/env perl
 # rcfRPMconverter.pl by Amory Meltzer
 # Convert to and from rcf (g-force) and rpm on centrifuges
-## Optional option to select from/to
-## Built-in defaults for common fuges
-## Handle through interactive
 
 # g = (1.118 x 10^-5) x R x S^2
 # g = g
 # R = radius, cm
 # S = rpm
 
-
 use strict;
 use warnings;
 use diagnostics;
 
 use Getopt::Std;
-
 
 # Parse commandline options
 my %opts = ();
@@ -42,15 +37,6 @@ foreach my $key (keys %opts) {
   checkIfNumber($opts{$key});
 }
 
-sub checkIfNumber
-  {
-    my $check = shift;
-    if ($check !~ /^\.\d+$|^\d+\.?\d*$/) {
-      print "Input must be a positive number\n";
-      exit;
-    }
-  }
-
 if ($opts{s}) {
   $opts{c} = 20;		# Sorvall Legend
 } elsif ($opts{m}) {
@@ -72,10 +58,14 @@ if ($opts{r}) {
 
 
 
-
-
-
-
+sub checkIfNumber
+  {
+    my $check = shift;
+    if ($check !~ /^\.\d+$|^\d+\.?\d*$/) {
+      print "Input must be a positive number\n";
+      exit;
+    }
+  }
 
 
 #### Usage statement ####
