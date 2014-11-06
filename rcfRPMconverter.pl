@@ -42,7 +42,7 @@ foreach my $key (keys %opts) {
 sub checkIfNumber
   {
     my $check = shift;
-    if ($check !~ /\.\d+|\d+.?\d?/) {
+    if ($check !~ /^\.\d+$|^\d+\.?\d*$/) {
       print "Input must be a number\n";
       exit;
     }
