@@ -35,7 +35,7 @@ if (!$opts{r} && !$opts{g}) {
 if ($opts{s}) {
   $opts{c} = 20;		# Sorvall Legend
 } elsif ($opts{m}) {
-  $opts{c} = 8.7;		# Benchtop minifuge
+  $opts{c} = 8.6;		# Benchtop minifuge
 } elsif (! $opts{c}) {
   print "What is the radius of your centrifuge (cm)?\n";
   $opts{c} = <>;;
