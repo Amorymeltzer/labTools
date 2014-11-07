@@ -50,10 +50,10 @@ my $const = 1.118/100000;
 
 if ($opts{r}) {
   my $g =  $const * $opts{c} * $opts{r} * $opts{r};
-  printf "%.f\n", $g;
+  printf "RCF(g)\t%.f\n", $g;
 } elsif ($opts{g}) {
   my $r = sqrt($opts{g} / $const / $opts{c});
-  printf "%.f\n", $r;
+  printf "RPM\t%.f\n", $r;
 }
 
 
