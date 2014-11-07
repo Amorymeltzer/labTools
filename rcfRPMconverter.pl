@@ -38,7 +38,7 @@ if ($opts{s}) {
   $opts{c} = 8.6;		# Sorvall Legend Micro 21
 } elsif (! $opts{c}) {
   print "What is the radius of your centrifuge (cm)?\n";
-  $opts{c} = <>;;
+  $opts{c} = <>;
 }
 
 # Clean inputs
