@@ -6,7 +6,6 @@
 
 if [ $1 ]; then
     mogpath=$1
-    echo $mogpath
 else
     echo "Please specify a directory"
-    fi
+fi
