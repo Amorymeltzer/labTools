@@ -11,3 +11,5 @@ else
 fi
 
 mogrify -format jpg $mogpath/*.tif
+
+rm $mogpath/*.tif
