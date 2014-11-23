@@ -9,3 +9,5 @@ if [ $1 ]; then
 else
     echo "Please specify a directory"
 fi
+
+mogrify -format jpg $mogpath/*.tif
