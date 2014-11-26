@@ -27,7 +27,7 @@ if (!$opts{r} && !$opts{g}) {
 } elsif ($opts{r} && $opts{g}) {
   print "You may only specificy either rpm (r) or rcf/g (g)\n";
   exit;
-} elsif ($opts{s} && $opts{m}) {
+} elsif ($opts{s} && ($opts{m} || $opts{u}) || ($opts{m} && $opts{u})) {
   print "You may only specificy one centrifuge\n";
   exit;
 }
