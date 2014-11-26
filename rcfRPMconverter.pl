@@ -77,7 +77,7 @@ sub checkIfNumber
 sub usage
   {
     print <<USAGE;
-Usage: $0 [-rgcsmh]
+Usage: $0 [-rgcsmuh]
       -r specify a speed in rpm, cannot be used with -g option
       -g specify rcf (g), cannot be used with -f option
       -c specify the rotor radius, in centimeters (cm)
