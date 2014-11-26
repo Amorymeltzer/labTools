@@ -81,9 +81,9 @@ Usage: $0 [-rgcsmh]
       -r specify a speed in rpm, cannot be used with -g option
       -g specify rcf (g), cannot be used with -f option
       -c specify the rotor radius, in centimeters (cm)
-      -s default to the Sorvall Legend XTR centrifuge.  Supersedes -c and -m
-      -m default to the Sorvall Legend Micro 21 microfuge.  Supersedes -c
-      -u default to the BSL2 Ultracentrifuge.  Supersedes -c, -m, and 
+      -s default to the Sorvall Legend XTR centrifuge.  Supersedes -c, -m, and -u
+      -m default to the Sorvall Legend Micro 21 microfuge.  Supersedes -c and -u
+      -u default to the BSL2 Ultracentrifuge.  Supersedes -c
       -h print this message
 USAGE
   }
