@@ -15,7 +15,7 @@ use Getopt::Std;
 
 # Parse commandline options
 my %opts = ();
-getopts('r:g:c:smh', \%opts);
+getopts('r:g:c:smuh', \%opts);
 
 if ($opts{h}) {
   usage(); exit;
@@ -36,6 +36,8 @@ if ($opts{s}) {
   $opts{c} = 20;		# Sorvall Legend XTR
 } elsif ($opts{m}) {
   $opts{c} = 8.6;		# Sorvall Legend Micro 21
+} elsif ($opts{u}) {
+  $opts{c} = 11.4;		# BSL2 Ultracentrifuge
 } elsif (! $opts{c}) {
   print "What is the radius of your centrifuge (cm)?\n";
   $opts{c} = <>;
@@ -81,6 +83,7 @@ Usage: $0 [-rgcsmh]
       -c specify the rotor radius, in centimeters (cm)
       -s default to the Sorvall Legend XTR centrifuge.  Supersedes -c and -m
       -m default to the Sorvall Legend Micro 21 microfuge.  Supersedes -c
+      -u default to the BSL2 Ultracentrifuge.  Supersedes -c, -m, and 
       -h print this message
 USAGE
   }
