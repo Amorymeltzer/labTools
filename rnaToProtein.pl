@@ -26,13 +26,17 @@ while ($rna =~ /(\w{3})/g) {
   $final = $';
 }
 if (length($rna) % 3) {
-  push @sequence, $final;
+  my $over = length $final;
+  # Ternary ?: ($a = $test ? $b : $c;)
+  # a is b if test, c if notjj
+  my $base = ($over == 2) ? 'bases' : 'base';
+  print "Extra $over $base ($final) not converted\n";
 }
 
 my %codonMap;
 while (<DATA>) {
   chomp;
-  s/\ //g;
+  s/\ //g;			# Deals with leading spaces in _DATA_
 
   my @lookup = split /,/;
   my $result = shift @lookup;
@@ -69,7 +73,7 @@ __END__
   I,AUU,AUC,AUA
   K,AAA,AAG
   L,UUA,UUG,CUU,CUC,CUA,CUG
-M,AUG
+  M,AUG
   N,AAU,AAC
   P,CCU,CCC,CCA,CCG
   Q,CAA,CAG
