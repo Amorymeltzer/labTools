@@ -21,6 +21,8 @@ if ($samples !~ m/^\d+$/) {
   exit;
 }
 
+
+$samples *= 1.1;
 my @keys = qw(MM F R H2O);
 my %amounts = (
 	       MM => 10,
