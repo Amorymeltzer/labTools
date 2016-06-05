@@ -22,7 +22,10 @@ if ($samples !~ m/^\d+$/) {
 }
 
 
+print "$samples reactions; ";
 $samples *= 1.1;
+print "prepare enough for $samples\n\n";
+
 my @keys = qw(MM F R H2O);
 my %amounts = (
 	       MM => 10,
@@ -42,5 +45,5 @@ foreach (@keys) {
   print "$amounts{$_}\t$vingt\t$tofiv\n";
 }
 
-print "\nLMHP:\n\n98 => 5m\n98 => 10s --";
+print "\nLMHP:\n98 => 5m\n98 => 10s --";
 print "\n68 => 10s   | > 35 cycles\n72 => 30s --\n72 => 1m\n4 => inf\n";
