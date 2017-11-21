@@ -21,7 +21,7 @@ if ($samples !~ m/^\d+$/) {
   exit;
 }
 
-
+chomp $samples;
 print "$samples reactions; ";
 $samples *= 1.1;
 print "prepare enough for $samples\n\n";
